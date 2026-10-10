@@ -1,0 +1,24 @@
+{
+  "name": "bee-intelligence",
+  "version": "0.1.0",
+  "description": "Plugin Bee Intelligence: agent và skills làm việc với dữ liệu Beetrack qua MCP của site người dùng.",
+  "author": {
+    "name": "Clavis Aurea",
+    "email": "thanh.nguyen@clavis-aurea.io"
+  },
+  "userConfig": {
+    "site": {
+      "type": "string",
+      "title": "Beetrack site",
+      "description": "Tên site (subdomain), ví dụ nhập 'acme' cho https://acme.beetrack.vn",
+      "required": true
+    },
+    "api_token": {
+      "type": "string",
+      "title": "Beetrack API token",
+      "description": "Bearer token lấy trên web Beetrack. Quyền của token quyết định các tool khả dụng.",
+      "sensitive": true,
+      "required": true
+    }
+  }
+}

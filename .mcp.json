@@ -1,0 +1,11 @@
+{
+  "mcpServers": {
+    "bee-intelligence": {
+      "type": "http",
+      "url": "https://${user_config.site}.beetrack.vn/bi/rest-api/mcp",
+      "headers": {
+        "Authorization": "Bearer ${user_config.api_token}"
+      }
+    }
+  }
+}

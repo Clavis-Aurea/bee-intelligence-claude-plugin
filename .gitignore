@@ -1,0 +1,7 @@
+node_modules/
+*.plugin
+*.zip
+
+# Per-user context (use the *.template.md files as a starting point)
+context/SOUL.md
+context/USER.md

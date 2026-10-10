@@ -1,0 +1,35 @@
+{
+  "version": 1,
+  "project": {
+    "name": "Example project"
+  },
+  "data": {
+    "default_source": "ask",
+    "files": [
+      {
+        "path": "data/sales.xlsx",
+        "sheet": "Sheet1",
+        "key_columns": [
+          "Date",
+          "Amount"
+        ],
+        "header_row": 1,
+        "description": "Monthly sales export"
+      }
+    ]
+  },
+  "locale": {
+    "language": "vi",
+    "currency": "VND",
+    "units": "million"
+  },
+  "reporting": {
+    "period_convention": "calendar month"
+  },
+  "decisions": [
+    {
+      "text": "Revenue excludes VAT",
+      "confirmed_on": "2026-10-10"
+    }
+  ]
+}
