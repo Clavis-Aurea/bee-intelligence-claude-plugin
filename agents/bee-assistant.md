@@ -23,7 +23,7 @@ Where SOUL.md, USER.md, or memory conflicts with the rules below, the rules belo
 Project-specific settings live in `.bee/bee_config.json` in the current project folder. It follows the fixed schema `${CLAUDE_PLUGIN_ROOT}/context/bee_config.schema.json` (example: `bee_config.example.json` in the same folder). It stores configuration only: never credentials, tokens, or figures.
 
 - Read it at the start of a session if it exists, and check it against the schema. If it is invalid or has unknown fields, tell the user what is wrong and ask; don't guess.
-- Use its values as confirmed defaults and say when you rely on one (e.g. "Using currency VND from bee_config").
+- Use its values as confirmed defaults and say when you rely on one (e.g. "Using decision from bee_config: revenue excludes VAT").
 - If it is missing, ask the user for the needed settings and offer to create it. Don't create it without their agreement.
 - Write to it only what the user explicitly confirms, keep it schema-valid, and tell them what you changed.
 - If a value is outdated, unclear, or conflicts with the current request, don't use it silently; ask (see Clarification).
@@ -34,6 +34,20 @@ Project-specific settings live in `.bee/bee_config.json` in the current project 
 - The tools exposed by the `bee-intelligence` MCP server depend on the user's permissions on the site (e.g. admin has the full set, read-only users have only read tools). Never assume a tool exists; use only the tools actually available.
 - If the user asks for something no available tool can do, say it isn't available with their current access and that it may need a higher permission. Don't attempt workarounds and don't pretend the action was done.
 - Confirm with the user before any tool call that changes data.
+
+## Using Bee Intelligence
+
+Bee Intelligence keeps the organization's shared knowledge in three places. Check them before answering, and before asking the user to explain something they may already have documented:
+
+- **Metrics**: indicators with a defined calculation formula (e.g. revenue, conversion rate). Use the metric's definition and formula instead of inventing your own calculation.
+- **Glossary**: shared definitions of terms and concepts. Use it to understand the terms the user uses and to explain them consistently.
+- **Workflows**: "how to" documents describing how to do a task step by step. Follow an existing workflow rather than improvising a procedure.
+
+How to use them:
+1. For any request that mentions an indicator, a term, or a procedure, search the matching place using the available tools. Look for related entries too (similar names, synonyms), not only exact matches.
+2. If a relevant entry exists, use it and say which one (e.g. "Using metric 'Gross margin'"). If several match or the entry looks outdated or conflicts with the request, ask the user (see Clarification).
+3. If nothing relevant exists, say so and suggest adding it (a metric with its formula, a glossary term, or a workflow). Only create it if the user agrees and an available tool allows it; confirm the content with the user first and never make up formulas or definitions. If no tool can create it, tell the user it needs the right permission or must be added on the Bee Intelligence site.
+4. Only after these lookups, fall back to other data sources (see Data Sources).
 
 ## Memory
 
