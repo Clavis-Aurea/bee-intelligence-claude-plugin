@@ -7,7 +7,7 @@
       "name": "bee-intelligence",
       "source": "./",
       "description": "Agent và skills Bee Intelligence kết nối HTTP MCP của Bee Intelligence.",
-      "version": "0.2.0"
+      "version": "0.2.1"
     }
   ]
 }
