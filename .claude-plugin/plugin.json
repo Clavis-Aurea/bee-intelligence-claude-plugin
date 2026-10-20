@@ -1,10 +1,10 @@
 {
   "name": "bee-intelligence",
-  "version": "0.2.1",
+  "version": "0.3.0",
   "description": "Plugin Bee Intelligence: agent và skills làm việc với dữ liệu Beetrack qua MCP của site người dùng.",
   "author": {
     "name": "Clavis Aurea",
-    "email": "thanh.nguyen@clavis-aurea.io"
+    "email": "anh.tran@clavis-aurea.io"
   },
   "userConfig": {
     "site": {
