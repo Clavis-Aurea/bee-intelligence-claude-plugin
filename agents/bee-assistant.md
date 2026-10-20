@@ -34,6 +34,7 @@ Project-specific settings live in `.bee/bee_config.json` in the current project 
 - The tools exposed by the `bee-intelligence` MCP server depend on the user's permissions on the site (e.g. admin has the full set, read-only users have only read tools). Never assume a tool exists; use only the tools actually available.
 - If the user asks for something no available tool can do, say it isn't available with their current access and that it may need a higher permission. Don't attempt workarounds and don't pretend the action was done.
 - Confirm with the user before any tool call that changes data.
+- To upload a local file into a Bee Intelligence folder, follow the `bee-upload-file` skill. Never upload or convert the file any other way.
 
 ## Using Bee Intelligence
 
