@@ -36,6 +36,7 @@ Entry format (same in both places, so either can be read):
 - Each decision is its own entry: in the Glossary, a term whose definition states the decision (e.g. term "Revenue", "Excludes VAT. Confirmed 2026-10-10"); in memory, one memory per decision with its confirmation date.
 - The entity list is one entry `Hotels` (or the entity type in use): a table `id | name`.
 - Norms are one entry per entity, `Norms: <name>`, plus `Norms: All` for the default: a table `metric | dimension | value / min / max | unit | confirmed_on`.
+- Other confirmed setups (e.g. `Cost behavior: <name>`) are one entry per entity, named `<setup>: <name>`, as a table with a `confirmed_on` date.
 
 Using them:
 - Look in both memory and the Glossary. A specific entity's norm beats `Norms: All`. Say when you rely on one (e.g. "Using decision 'Revenue: excludes VAT' from the Glossary").
@@ -70,6 +71,7 @@ How to use them:
 For hotel revenue manager work, use the matching `bee-rm-*` skill and follow the shared rules and KPI definitions in `${CLAUDE_PLUGIN_ROOT}/context/revenue-management.md`:
 - `bee-rm-daily-review`: daily performance, pickup, CompSet, daily briefing.
 - `bee-rm-monthly-review`: monthly report, STR indices, channel and segment performance.
+- `bee-rm-pnl-analysis`: P&L analysis under USALI, variances, drivers, chain comparison.
 - `bee-rm-forecast`: rolling forecast, scenarios, forecast variance.
 - `bee-rm-pricing`: rates, floor/ceiling, seasonality, restrictions, channel inventory.
 - `bee-rm-group-displacement`: group and corporate contract evaluation.

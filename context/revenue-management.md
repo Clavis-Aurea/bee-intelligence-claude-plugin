@@ -43,7 +43,8 @@ Start the prompt with the line `BEE-RM-ANALYST BRIEF v1`, then give:
 - `sources`: Bee Intelligence data sources / tool names and file paths to read, and which source wins if they disagree (as confirmed by the user).
 - `definitions`: the formula to use for each indicator, and whether it comes from Metrics or the KPI Dictionary (user-confirmed).
 - `norms`: per hotel, the norms to flag against (metric, dimension, value / min / max, unit), or "none set".
-- `conventions`: currency, VAT, breakfast, OOO rules.
+- `conventions`: currency, VAT, breakfast, OOO rules (for P&L also unit, sign convention, service charge treatment).
+- `report_lines` (P&L tasks): the report line set (`hcdm_report_line`, `report_line_vocabulary_id = 'USALI-12'`) and the query used to get the amounts, and the fixed / variable split if a flexed budget is needed.
 - `output`: the tables and columns expected; and, if detail is long (e.g. audit error lists), the file path to write the detail to.
 
 ### After delegating
@@ -104,6 +105,12 @@ Use these metric / dimension names when saving, so norms stay consistent across 
 | Inventory Turnover | | times/month | fnb | 4–6 |
 | RevPASH | outlet: <name> | currency | fnb | none |
 | Capture Rate | outlet: <name> | % | fnb | none |
+| Materiality threshold | (amount and / or %) | currency or % | pnl-analysis | none |
+| GOP Margin | | % | pnl-analysis | none |
+| EBITDA Margin | | % | pnl-analysis | none |
+| Departmental Profit Margin | department: <name> | % | pnl-analysis | none |
+| Labor Cost % | department: <name> or Total | % | pnl-analysis | none (F&B: see above) |
+| Undistributed Expense % | department: A&G / ITS / S&M / POM / Utilities | % of total revenue | pnl-analysis | none |
 
 Method constants (Smith & Kasavana 70% popularity factor, index baseline 100, look-ahead windows) are not norms; the user may still ask to change them for a task.
 
@@ -123,6 +130,26 @@ Method constants (Smith & Kasavana 70% popularity factor, index baseline 100, lo
 | CPOR | Rooms variable cost / Occupied rooms | Variable cost: amenities, laundry, direct utilities, per-room cleaning labor. Agree the cost list with Accounting. |
 | Flow-Through | (GOP this period − GOP comparison) / (Revenue this period − Revenue comparison) | Ask for the comparison base (budget, forecast, LY, last month). Not meaningful when the revenue change is ≈ 0 or negative: report it separately. |
 | GOP floor rate | CPOR / (1 − commission % − payment fee %) | Lowest rate on that channel that still covers variable cost. Ask whether to add allocated fixed cost. |
+
+### P&L (USALI)
+
+| Indicator | Formula | Notes |
+|---|---|---|
+| Total Departmental Profit | Σ (Departmental revenue − Departmental expenses) | |
+| GOP | Total Departmental Profit − Total Undistributed Expenses | |
+| GOP Margin | GOP / Total Operating Revenue | |
+| EBITDA | GOP − Management Fees − Non-Operating Expenses (net of non-operating income) | |
+| EBITDA Margin | EBITDA / Total Operating Revenue | |
+| EBITDA PAR | EBITDA / Rooms available | |
+| Departmental Profit Margin | Departmental profit / That department's revenue | USALI basis: own department revenue. |
+| Departmental expense ratio | Expense line / That department's revenue | Cost of sales against the matching revenue (food vs food, beverage vs beverage). |
+| Undistributed Expense % | Undistributed line / Total Operating Revenue | |
+| Labor Cost % | Labor costs and related expenses / Revenue (department's own, or total for Total) | Includes service charge distribution, contracted labor, bonuses, payroll-related. |
+| POR | Expense / Rooms sold | e.g. Rooms expense POR, Rooms labor POR. |
+| PAR | Amount / Rooms available | e.g. Undistributed PAR, Utilities PAR. |
+| Rooms revenue volume effect | (Actual rooms sold − Budget rooms sold) × Budget ADR | Volume + rate effect = total Rooms revenue variance. |
+| Rooms revenue rate effect | (Actual ADR − Budget ADR) × Actual rooms sold | |
+| Flexed budget | Fixed part + Variable rate × Actual volume | Fixed / variable split per line from the user. Volume variance = Flexed − Budget; Efficiency variance = Actual − Flexed. |
 
 ### Bookings and Forecast
 

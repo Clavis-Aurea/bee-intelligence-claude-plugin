@@ -20,6 +20,8 @@ Confirm, and ask for anything missing:
 
 ## Analysis Sections
 
+If the user provides a P&L or asks for a P&L / cost / budget variance analysis, use `bee-rm-pnl-analysis` for that part and bring its summary (GOP, GOP margin, EBITDA, Flow-Through, key variances) into this review.
+
 Do the sections that have data; for any section missing data, write "no data yet" rather than silently leaving it out.
 
 For a chain review, delegate sections 1-6 per hotel (or batch) to `bee-rm-analyst`; for one hotel with large data, sections 2-5 can be delegated in parallel. See "Delegation" in the shared rules. The Action Plan and Output are always done in the main conversation.
