@@ -1,10 +1,10 @@
 ---
 name: bee-hello
-description: Skill mẫu của plugin Bee Intelligence. Dùng khi người dùng muốn kiểm tra kết nối tới MCP server Bee Intelligence.
+description: Sample skill of the Bee Intelligence plugin. Use when the user wants to check the connection to the Bee Intelligence MCP server (vi - "kiểm tra kết nối").
 ---
 
 # Bee Intelligence Hello
 
-1. Liệt kê các tool của MCP server `bee-intelligence` đang khả dụng.
-2. Nếu không thấy tool nào, báo người dùng kiểm tra lại Bee Intelligence MCP URL và API token trong cấu hình plugin.
-3. Nếu có, tóm tắt ngắn các tool đó.
+1. List the currently available tools of the `bee-intelligence` MCP server.
+2. If there are none, tell the user to check the Bee Intelligence MCP URL and API token in the plugin configuration.
+3. If there are, briefly summarize those tools.
