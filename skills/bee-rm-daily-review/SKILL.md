@@ -19,6 +19,8 @@ Confirm (or take from saved decisions in memory or the Glossary), and ask for an
 
 If the user wants only one part (e.g. pickup only), do only that part.
 
+For several hotels, after Preparation, delegate parts 1, 2, and 4 per hotel (or batch) to `bee-rm-analyst` as described in "Delegation" in the shared rules; do parts 3, 5, and 6 in the main conversation from the returned tables.
+
 ## Part 1 - Yesterday's Performance (Night Audit)
 
 1. Get yesterday's OCC, ADR, RevPAR, room revenue (and total revenue if available).

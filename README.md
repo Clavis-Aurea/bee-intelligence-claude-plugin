@@ -13,6 +13,8 @@ The `bee-upload-file` skill uploads a local file into an organization folder, us
 ## Revenue management skills
 The `bee-rm-*` skills make `bee-assistant` a hotel revenue manager assistant: daily review, monthly review, forecast, pricing, group displacement, GOP optimization, guest insights, F&B, and data audit. Shared rules and KPI definitions are in `context/revenue-management.md`. Metrics defined in Bee Intelligence take precedence over those definitions, and every norm or target comes from the user, per hotel, never from the reference values.
 
+The `bee-rm-analyst` agent is an internal sub-agent the skills use for heavy data work (many hotels, large raw data). It is not meant to be used directly: it refuses any input that isn't a delegation brief from `bee-assistant`. Claude Code has no setting that hides a plugin agent, so this is enforced by the agent's own instructions.
+
 ## Decisions and norms
 Confirmed decisions (e.g. "revenue excludes VAT"), the list of hotels, and per-hotel norms are saved in Claude's memory or the Bee Intelligence Glossary, whichever the user chooses the first time. `bee_config` is not used for them.
 

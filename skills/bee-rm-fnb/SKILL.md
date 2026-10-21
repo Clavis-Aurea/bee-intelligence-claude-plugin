@@ -9,6 +9,8 @@ Read and follow `${CLAUDE_PLUGIN_ROOT}/context/revenue-management.md` before sta
 
 Determine which task the user needs: A - Menu Engineering, B - RevPASH, C - Capture Rate and cross-selling, D - cost control. Ask if unclear. Always confirm the outlet (restaurant, bar, room service, banquet), data period, and source (POS, inventory, accounting).
 
+With large POS / inventory data or several hotels, delegate the calculations of A (steps 1-3), B (step 1), C (step 1), and D (the indicators) to `bee-rm-analyst` (see "Delegation" in the shared rules); make the recommendations in the main conversation.
+
 ## A. Menu Engineering
 
 Needed: items sold in the period with quantities, selling prices (before VAT, confirm), and item cost from standard recipes.

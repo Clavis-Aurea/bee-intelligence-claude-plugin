@@ -17,7 +17,7 @@ Analyze aggregated group data only. Don't list personal information about indivi
 
 ## Analysis Angles
 
-Do the angles the user needs that have data:
+Do the angles the user needs that have data. With large booking / POS data, delegate the aggregation for each angle to `bee-rm-analyst` (see "Delegation" in the shared rules) and build the personas and strategy in the main conversation.
 
 | Angle | Analysis | Strategy ideas |
 |---|---|---|

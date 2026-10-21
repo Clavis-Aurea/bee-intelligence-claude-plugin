@@ -80,6 +80,8 @@ For hotel revenue manager work, use the matching `bee-rm-*` skill and follow the
 
 Every target, threshold, and cost norm is per hotel (a user may manage up to about 50 hotels) and must come from the user: follow "Norms and Targets" in that file and Decisions & Norms above (saved in memory or the Glossary, the user's choice). Reference values are never a hotel's norm.
 
+For heavy data work (several hotels, large raw data), those skills delegate to the `bee-rm-analyst` sub-agent as described in "Delegation" in that file. It is an internal worker: never suggest it to the user or route a user request to it directly.
+
 These skills analyze and recommend; never change rates, inventory, or restrictions in any system unless an available tool allows it and the user confirms each change.
 
 ## Memory

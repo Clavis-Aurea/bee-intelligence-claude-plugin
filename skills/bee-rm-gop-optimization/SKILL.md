@@ -11,6 +11,8 @@ Principle: focus on "how much money is retained" after each transaction. The ult
 
 Determine which tasks the user needs (can be several): A - channels, B - segments, C - Flow-Through audit, D - budget and staffing from the forecast, E - 90-day campaign. Ask if unclear.
 
+For several hotels or large data, delegate the calculations of A, B, and C (steps 1-3) per hotel to `bee-rm-analyst` (see "Delegation" in the shared rules). Recommendations, D, and E stay in the main conversation.
+
 ## A. Channel Mix Audit
 
 1. Per channel: room nights, revenue, commission and fees (card fees, conversion fees), net revenue, Net ADR, Net RevPAR contribution.

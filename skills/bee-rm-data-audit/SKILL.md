@@ -19,6 +19,8 @@ The assistant only detects and reports. Never fix data in the PMS / CM / CRS its
 
 ## Checks
 
+With large booking lists or several hotels, delegate the checks to `bee-rm-analyst` (see "Delegation" in the shared rules): pass the standard code list and mapping rules in the brief, and have it write the detailed error table to a file and return only the summary. Remediation suggestions stay in the main conversation.
+
 1. **Missing / invalid codes**: bookings missing a Market / Source / Rate Code or using a code not in the list.
 2. **Conflicting codes**: combinations that break the mapping rules (e.g. a group Rate Code with a transient Market Code; OTA Source with no commission; Corporate rate with no company attached).
 3. **Anomalies**: bookings whose rate, LOS, or room count don't fit the assigned segment (e.g. 10 rooms under one name on the same dates tagged as Transient).
