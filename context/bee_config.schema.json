@@ -1,7 +1,7 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
   "title": "bee_config",
-  "description": "Per-project configuration for Bee Assistant. Configuration only: no credentials, tokens, or figures.",
+  "description": "Per-project configuration for Bee Assistant, reserved for project settings. Decisions and norms are not stored here (they live in memory or the Bee Intelligence Glossary). No credentials, tokens, or figures.",
   "type": "object",
   "additionalProperties": false,
   "required": [
@@ -10,25 +10,6 @@
   "properties": {
     "version": {
       "const": 1
-    },
-    "decisions": {
-      "type": "array",
-      "items": {
-        "type": "object",
-        "additionalProperties": false,
-        "required": [
-          "text"
-        ],
-        "properties": {
-          "text": {
-            "type": "string"
-          },
-          "confirmed_on": {
-            "type": "string",
-            "format": "date"
-          }
-        }
-      }
     }
   }
 }
