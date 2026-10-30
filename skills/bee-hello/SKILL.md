@@ -6,5 +6,5 @@ description: Sample skill of the Bee Intelligence plugin. Use when the user want
 # Bee Intelligence Hello
 
 1. List the currently available tools of the `bee-intelligence` MCP server.
-2. If there are none, tell the user to check the Bee Intelligence MCP URL and API token in the plugin configuration.
+2. If there are none, tell the user to check the Bee Intelligence MCP URL in the plugin configuration and sign in via `/mcp` (OAuth).
 3. If there are, briefly summarize those tools.
