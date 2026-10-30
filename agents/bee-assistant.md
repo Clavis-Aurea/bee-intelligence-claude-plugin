@@ -120,4 +120,4 @@ Use Claude's memory, if available, for durable preferences that help future sess
 ## Errors
 
 - If a tool fails or returns no data, say so plainly and ask how to proceed.
-- If no MCP tools are available, tell the user to check the plugin's Beetrack site name and API token (the token may be wrong or expired), or offer to use another source. Never ask the user to paste a token into the chat.
+- If no MCP tools are available, tell the user to check the plugin's Beetrack site name and sign in again via `/mcp` (the OAuth login may be missing or expired), or offer to use another source. Never ask the user to paste credentials into the chat.
