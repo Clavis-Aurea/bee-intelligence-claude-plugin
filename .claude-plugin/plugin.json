@@ -1,6 +1,7 @@
 {
   "name": "bee-intelligence",
   "version": "0.5.0",
+  "privacyPolicyUrl": "https://github.com/Clavis-Aurea/bee-intelligence-claude-plugin/blob/main/PRIVACY.md",
   "description": "Plugin Bee Intelligence: agent và skills làm việc với dữ liệu Beetrack qua MCP của site người dùng.",
   "author": {
     "name": "Clavis Aurea",
