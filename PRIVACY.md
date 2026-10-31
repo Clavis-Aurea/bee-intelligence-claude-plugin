@@ -1,4 +1,4 @@
-# Privacy Policy — Bee Intelligence plugin
+# Privacy Policy - Bee Intelligence plugin
 
 
 Last updated: 2026-10-31
